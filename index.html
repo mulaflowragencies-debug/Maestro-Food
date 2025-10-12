@@ -1,397 +1,692 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Maestro Food — Accueil</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maestro Food - Restaurant & Traiteur</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Réinitialisation et polices */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+        html {
+            scroll-behavior: smooth;
+        }
 
-  <style>
-    :root{
-      --bg1: #0f1724;
-      --accent: #ffb703; /* jaune chaud */
-      --accent-2: #fb8500; /* orange */
-      --muted: #9aa7b2;
-      --card-bg: rgba(255,255,255,0.03);
-      --glass: rgba(255,255,255,0.04);
-      --glass-2: rgba(255,255,255,0.02);
-      --radius: 14px;
-      --max-w: 1200px;
-    }
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(251,133,0,0.06), transparent),
-                  linear-gradient(180deg, #071028 0%, #071a2a 100%);
-      color: #e6eef6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      overflow-x:hidden;
-    }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-    /* Container */
-    .container{
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 28px;
-    }
+        /* Section utilitaire : Bouton */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #e6b325;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
 
-    /* Header */
-    header{
-      position: sticky;
-      top:0;
-      z-index:80;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(180deg, rgba(7,10,20,0.6), rgba(7,10,20,0.35));
-      border-bottom: 1px solid rgba(255,255,255,0.03);
-    }
-    .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;max-width:var(--max-w);margin:0 auto}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-    .logo{
-      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      display:flex;align-items:center;justify-content:center;box-shadow: 0 6px 18px rgba(251,133,0,0.16);
-      flex-shrink:0;
-    }
-    .logo svg{width:38px;height:38px;filter:drop-shadow(0 6px 12px rgba(0,0,0,0.25))}
-    .brand h1{font-family:'Playfair Display',serif;margin:0;font-size:20px;letter-spacing:0.4px}
-    .brand p{margin:0;font-size:12px;color:var(--muted)}
+        .btn:hover {
+            background: #d4a217;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
 
-    nav.desktop{display:flex;gap:18px;align-items:center}
-    nav.desktop a{color:inherit;text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px}
-    nav.desktop a:hover{background:var(--glass);transform:translateY(-2px)}
+        /* Barre de navigation */
+        header {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-    .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:#081225;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;box-shadow:0 10px 24px rgba(251,133,0,0.12)}
-    .cta:hover{transform:translateY(-3px)}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    /* Hamburger for mobile */
-    .hamburger{display:none;width:46px;height:46px;border-radius:10px;background:var(--glass);align-items:center;justify-content:center;cursor:pointer}
-    .hamburger div{width:22px;height:2px;background:#fff;border-radius:2px;position:relative}
-    .hamburger div::before,.hamburger div::after{content:"";position:absolute;left:0;width:22px;height:2px;background:#fff;border-radius:2px}
-    .hamburger div::before{top:-7px}
-    .hamburger div::after{top:7px}
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #e6b325;
+        }
 
-    /* Hero */
-    .hero{
-      display:flex;gap:32px;align-items:center;padding:48px 0;
-    }
-    .hero-left{flex:1;min-width:260px}
-    .hero-right{flex:1;display:flex;align-items:center;justify-content:center;position:relative}
-    .tag{display:inline-block;background:linear-gradient(90deg,#0ea5a4, #06b6d4);padding:6px 10px;border-radius:999px;font-weight:700;color:#001726;margin-bottom:12px;font-size:13px}
-    .hero h2{font-family:'Playfair Display',serif;font-size:44px;margin:8px 0;line-height:1.02}
-    .hero p.lead{color:var(--muted);max-width:560px;margin-top:14px}
-    .hero-actions{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--accent);font-weight:700;cursor:pointer}
-    .hero-stats{display:flex;gap:18px;margin-top:22px}
-    .stat{background:var(--glass);padding:10px 14px;border-radius:12px;font-weight:600}
+        .logo span {
+            color: #fff;
+        }
 
-    /* Floating food illustration */
-    .food-card{
-      width:420px;height:320px;border-radius:20px;background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));backdrop-filter: blur(6px);
-      display:flex;align-items:center;justify-content:center;box-shadow: 0 20px 55px rgba(0,0,0,0.45);
-      position:relative;overflow:visible;
-    }
-    .plate{
-      width:260px;height:260px;border-radius:50%;background:linear-gradient(180deg,#fff, #fff);box-shadow: 0 12px 40px rgba(0,0,0,0.35);
-      display:flex;align-items:center;justify-content:center;transform:translateY(0);
-      animation: floatY 6s ease-in-out infinite;
-    }
-    @keyframes floatY{
-      0%{transform:translateY(0)}
-      50%{transform:translateY(-12px)}
-      100%{transform:translateY(0)}
-    }
-    .plate img{width:86%;height:86%;object-fit:cover;border-radius:50%}
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
 
-    /* Menu grid */
-    section.menu{padding:40px 0}
-    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-    .dish{
-      padding:14px;background:var(--card-bg);border-radius:14px;border:1px solid rgba(255,255,255,0.03);cursor:pointer;transition:transform .25s ease, box-shadow .25s ease;
-      display:flex;flex-direction:column;gap:10px;
-    }
-    .dish:hover{transform:translateY(-8px);box-shadow: 0 18px 40px rgba(2,6,23,0.6)}
-    .dish img{width:100%;height:160px;object-fit:cover;border-radius:10px}
-    .dish .info{display:flex;align-items:center;justify-content:space-between}
-    .dish h3{margin:0;font-size:16px}
-    .price{font-weight:700;color:var(--accent-2)}
+        .nav-links li {
+            margin-left: 30px;
+        }
 
-    /* Services section */
-    .services{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;padding:40px 0}
-    .service-card{padding:18px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));border:1px solid rgba(255,255,255,0.03)}
-    .variants{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .variant{background:var(--glass-2);padding:8px 10px;border-radius:8px;font-weight:600}
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-    /* Footer */
-    footer{padding:30px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:40px;color:var(--muted)}
-    .footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+        .nav-links a:hover {
+            color: #e6b325;
+        }
 
-    /* Overlay menu mobile */
-    .overlay{
-      position:fixed;inset:0;background:linear-gradient(180deg, rgba(3,7,14,0.9), rgba(3,7,14,0.98));display:none;z-index:90;padding:40px;
-    }
-    .overlay.open{display:block}
-    .overlay nav{display:flex;flex-direction:column;gap:18px}
-    .overlay a{font-size:20px;color:#fff;text-decoration:none}
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
 
-    /* Responsive */
-    @media (max-width:900px){
-      .hero{flex-direction:column-reverse;padding:28px 0}
-      .hero-right{width:100%}
-      nav.desktop{display:none}
-      .hamburger{display:flex}
-      .services{grid-template-columns:1fr}
-    }
+        /* Section Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding-top: 80px;
+        }
 
-    /* Small animations */
-    .fade-in{opacity:0;transform:translateY(12px);transition:opacity .6s ease, transform .6s ease}
-    .fade-in.visible{opacity:1;transform:none}
-  </style>
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns .btn {
+            margin: 0 10px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #e6b325;
+            color: #e6b325;
+        }
+
+        .btn-secondary:hover {
+            background: #e6b325;
+            color: #1a1a1a;
+        }
+
+        /* Section À propos */
+        .about {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: #e6b325;
+            bottom: -10px;
+            left: 25%;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Section Services */
+        .services {
+            padding: 100px 0;
+            background: #f5f5f5;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #e6b325;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .service-card p {
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e6b325;
+            margin-bottom: 15px;
+        }
+
+        .capacity-options {
+            margin-top: 15px;
+        }
+
+        .capacity-options h4 {
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 10px;
+        }
+
+        .option {
+            background: #f5f5f5;
+            padding: 8px 5px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* Section Menu */
+        .menu {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .menu-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-card:hover .menu-img img {
+            transform: scale(1.1);
+        }
+
+        .menu-details {
+            padding: 20px;
+        }
+
+        .menu-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .menu-details p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .menu-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-tag {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #e6b325;
+        }
+
+        /* Section Contact */
+        .contact {
+            padding: 100px 0;
+            background: #f5f5f5;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info h3, .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            margin-right: 15px;
+            color: #e6b325;
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #e6b325;
+            outline: none;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #e6b325;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: #e6b325;
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #e6b325;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: #fff;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #e6b325;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: #1a1a1a;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text, .about-img {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="nav-wrap">
-      <a class="brand" href="#">
-        <div class="logo" aria-hidden="true">
-          <!-- Minimal SVG logo -->
-          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Maestro Food logo">
-            <defs>
-              <linearGradient id="g" x1="0" x2="1">
-                <stop offset="0" stop-color="#ffb703"/>
-                <stop offset="1" stop-color="#fb8500"/>
-              </linearGradient>
-            </defs>
-            <circle cx="32" cy="32" r="30" fill="url(#g)"/>
-            <path d="M20 40c6-8 24-8 28 0" stroke="#081225" stroke-width="3" stroke-linecap="round" fill="none"/>
-            <path d="M26 26c4 0 6-6 12-6" stroke="#081225" stroke-width="3" stroke-linecap="round" fill="none"/>
-          </svg>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Maestro <span>Food</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
-        <div>
-          <h1>Maestro Food</h1>
-          <p>Saveurs. Partage. Excellence.</p>
-        </div>
-      </a>
+    </header>
 
-      <nav class="desktop" aria-label="navigation principale">
-        <a href="#accueil">Accueil</a>
-        <a href="#menu">Menu</a>
-        <a href="#services">Services</a>
-        <a href="#apropos">À propos</a>
-        <a href="#contact">Contact</a>
-        <button class="cta" onclick="scrollToSection('menu')">Commander</button>
-      </nav>
-
-      <button class="hamburger" id="hambBtn" aria-label="ouvrir le menu">
-        <div></div>
-      </button>
-    </div>
-  </header>
-
-  <!-- Mobile overlay -->
-  <div class="overlay" id="mobileOverlay" aria-hidden="true">
-    <nav>
-      <a href="#accueil" onclick="closeOverlay()">Accueil</a>
-      <a href="#menu" onclick="closeOverlay()">Menu</a>
-      <a href="#services" onclick="closeOverlay()">Services</a>
-      <a href="#apropos" onclick="closeOverlay()">À propos</a>
-      <a href="#contact" onclick="closeOverlay()">Contact</a>
-      <a href="#" onclick="orderWhatsApp('Je veux commander (détail...)')">Commander via WhatsApp</a>
-    </nav>
-  </div>
-
-  <main class="container" id="accueil">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-left">
-        <span class="tag">Fait maison • Livraison & Sur place</span>
-        <h2 id="hero-title">Maestro Food — les saveurs qui réunissent</h2>
-        <p class="lead">Cuisine contemporaine, ingrédients locaux, et menus créés pour célébrer chaque instant.
-          Commandez en un clic, ou réservez pour vos événements spéciaux. Maestro Food — l’art de bien manger.</p>
-
-        <div class="hero-actions">
-          <button class="cta" onclick="scrollToSection('menu')">Commander maintenant</button>
-          <button class="btn-ghost" onclick="scrollToSection('services')">Nos services & tarifs</button>
-          <a class="btn-ghost" href="#apropos" style="text-decoration:none;" onclick="scrollToSection('apropos')">À propos</a>
-        </div>
-
-        <div class="hero-stats" style="margin-top:18px">
-          <div class="stat">Livraison: 20–40 min</div>
-          <div class="stat">Note client: 4.8 ★</div>
-          <div class="stat">Traiteur dès 50 000 CFA</div>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="food-card" aria-hidden="true">
-          <div class="plate">
-            <!-- image from Unsplash (random tasty plate). If you host offline, replace src -->
-            <img src="https://images.unsplash.com/photo-1604908554394-19b7ee5f94f2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0b5b3a6f62b7b1a4a7b0d7a8d77f1c38" alt="Assiette Gourmet Maestro Food">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Menu -->
-    <section id="menu" class="menu fade-in" aria-labelledby="menu-title">
-      <h2 id="menu-title" style="font-family:'Playfair Display',serif;margin:6px 0 16px 0">Notre menu populaire</h2>
-      <p style="color:var(--muted);margin-top:0;margin-bottom:18px">Sélection de plats préparés avec soin — cliquez sur <strong>Commander</strong> pour envoyer votre commande sur WhatsApp.</p>
-
-      <div class="menu-grid" id="menuGrid">
-        <!-- Dish 1 -->
-        <article class="dish" data-name="Poulet Rôti Maestro" data-price="4500">
-          <img src="https://images.unsplash.com/photo-1604908177522-3a6e4f8ed0e6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1f22aae2a889f0a1e7a2c0b8cfc2f01a" alt="Poulet Rôti Maestro">
-          <div class="info">
-            <h3>Poulet Rôti Maestro</h3>
-            <div class="price">4 500 CFA</div>
-          </div>
-          <p style="color:var(--muted);margin:0;font-size:14px">Poulet mariné, sauce maison, accompagnement du jour.</p>
-          <div style="display:flex;gap:10px;margin-top:8px">
-            <button class="cta" onclick="orderWhatsAppFromCard(this)">Commander</button>
-            <button class="btn-ghost" onclick="quickAddToCart(this)">+ Ajouter</button>
-          </div>
-        </article>
-
-        <!-- Dish 2 -->
-        <article class="dish" data-name="Pâtes Crème & Champignons" data-price="3500">
-          <img src="https://images.unsplash.com/photo-1604908177221-4a5bb2a0b4ad?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3d98e0e6d3f945b6b9f7a2f1fe1a2f9b" alt="Pâtes Crème & Champignons">
-          <div class="info">
-            <h3>Pâtes Crème & Champignons</h3>
-            <div class="price">3 500 CFA</div>
-          </div>
-          <p style="color:var(--muted);margin:0;font-size:14px">Pâtes fraîches, sauce crémeuse, champignons sautés.</p>
-          <div style="display:flex;gap:10px;margin-top:8px">
-            <button class="cta" onclick="orderWhatsAppFromCard(this)">Commander</button>
-            <button class="btn-ghost" onclick="quickAddToCart(this)">+ Ajouter</button>
-          </div>
-        </article>
-
-        <!-- Dish 3 -->
-        <article class="dish" data-name="Bœuf Braisé à la Maestro" data-price="5500">
-          <img src="https://images.unsplash.com/photo-1603079482646-0d9f1a7c6f6f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=4d9eb7f8e0f4eb3a342b4b0b2d9d5a4f" alt="Boeuf Braisé">
-          <div class="info">
-            <h3>Bœuf Braisé à la Maestro</h3>
-            <div class="price">5 500 CFA</div>
-          </div>
-          <p style="color:var(--muted);margin:0;font-size:14px">Bœuf tendre, réduction d'épices, légumes rôtis.</p>
-          <div style="display:flex;gap:10px;margin-top:8px">
-            <button class="cta" onclick="orderWhatsAppFromCard(this)">Commander</button>
-            <button class="btn-ghost" onclick="quickAddToCart(this)">+ Ajouter</button>
-          </div>
-        </article>
-
-        <!-- Dish 4 -->
-        <article class="dish" data-name="Salade Fraîcheur Maestro" data-price="2500">
-          <img src="https://images.unsplash.com/photo-1543353071-087092ec393f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6f67bbf3e1b8f7d5a9a0c8f9b8c8f1d1" alt="Salade Fraîcheur">
-          <div class="info">
-            <h3>Salade Fraîcheur Maestro</h3>
-            <div class="price">2 500 CFA</div>
-          </div>
-          <p style="color:var(--muted);margin:0;font-size:14px">Légumes de saison, vinaigrette maison.</p>
-          <div style="display:flex;gap:10px;margin-top:8px">
-            <button class="cta" onclick="orderWhatsAppFromCard(this)">Commander</button>
-            <button class="btn-ghost" onclick="quickAddToCart(this)">+ Ajouter</button>
-          </div>
-        </article>
-
-        <!-- Dish 5 -->
-        <article class="dish" data-name="Burger Maestro Signature" data-price="4200">
-          <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=aa3d2cc8e1b8b7c6d5b7a3c2d1b0f3e0" alt="Burger Maestro">
-          <div class="info">
-            <h3>Burger Maestro Signature</h3>
-            <div class="price">4 200 CFA</div>
-          </div>
-          <p style="color:var(--muted);margin:0;font-size:14px">Steak, fromage, sauce secrète, pain brioché.</p>
-          <div style="display:flex;gap:10px;margin-top:8px">
-            <button class="cta" onclick="orderWhatsAppFromCard(this)">Commander</button>
-            <button class="btn-ghost" onclick="quickAddToCart(this)">+ Ajouter</button>
-          </div>
-        </article>
-
-        <!-- Dish 6 -->
-        <article class="dish" data-name="Tiramisu Maison" data-price="2200">
-          <img src="https://images.unsplash.com/photo-1601933471784-6c8c1a9b2de1?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=c8f04a2e4a5a3f3a1b2c3d4e5f6a7b9c" alt="Tiramisu">
-          <div class="info">
-            <h3>Tiramisu Maison</h3>
-            <div class="price">2 200 CFA</div>
-          </div>
-          <p style="color:var(--muted);margin:0;font-size:14px">Dessert onctueux, café & mascarpone.</p>
-          <div style="display:flex;gap:10px;margin-top:8px">
-            <button class="cta" onclick="orderWhatsAppFromCard(this)">Commander</button>
-            <button class="btn-ghost" onclick="quickAddToCart(this)">+ Ajouter</button>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="fade-in" aria-labelledby="services-title">
-      <h2 id="services-title" style="font-family:'Playfair Display',serif;margin:6px 0 16px 0">Nos services & Tarifs</h2>
-      <div class="services">
-        <div class="service-card">
-          <h3>Service Traiteur</h3>
-          <p style="color:var(--muted)">Idéal pour événements privés, séminaires et fêtes. Menus adaptés selon budget et nombre d'invités.</p>
-          <p style="margin-top:8px;font-weight:700">À partir de <span style="color:var(--accent)">50 000 CFA</span></p>
-
-          <div style="margin-top:12px">
-            <strong>Formules Anniversaire</strong>
-            <div class="variants">
-              <div class="variant">5 places — 15 000 CFA</div>
-              <div class="variant">10 places — 30 000 CFA</div>
-              <div class="variant">15 places — 45 000 CFA</div>
-              <div class="variant">25 places — 75 000 CFA</div>
-              <div class="variant">50 places — 140 000 CFA</div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bienvenue chez Maestro Food</h1>
+                <p>Découvrez une expérience culinaire exceptionnelle alliant tradition et innovation. Notre passion pour la gastronomie se reflète dans chaque plat que nous créons.</p>
+                <div class="hero-btns">
+                    <a href="#menu" class="btn">Voir Notre Menu</a>
+                    <a href="#contact" class="btn btn-secondary">Réserver une Table</a>
+                </div>
             </div>
-            <p style="color:var(--muted);margin-top:10px">Options: décoration, gâteau personnalisé, photos, animation (sur demande).</p>
-          </div>
-
-          <div style="margin-top:14px;display:flex;gap:12px">
-            <button class="cta" onclick="orderWhatsApp('Demande de devis traiteur')">Demander un devis</button>
-            <button class="btn-ghost" onclick="orderWhatsApp('Réserver une table pour anniversaire')">Réserver</button>
-          </div>
         </div>
-
-        <div class="service-card">
-          <h3>Livraison & Réservation</h3>
-          <p style="color:var(--muted)">Livraison disponible dans la ville. Réservation de table en ligne — confirmez via WhatsApp.</p>
-          <ul style="color:var(--muted);margin-top:8px">
-            <li>Horaires: Mardi — Dimanche: 10:00 — 22:00</li>
-            <li>Réservation: possible pour groupes jusqu'à 60 personnes</li>
-            <li>Méthodes de paiement: cash, mobile money</li>
-          </ul>
-
-          <div style="margin-top:12px">
-            <strong>Contact rapide</strong>
-            <p style="margin:6px 0;color:var(--muted)">WhatsApp: <strong>+237 698 71 57 69</strong></p>
-            <button class="cta" onclick="orderWhatsApp('Bonjour, je souhaite des informations sur la livraison')">Contacter</button>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- About -->
-    <section id="apropos" class="fade-in" aria-labelledby="apropos-title" style="padding-top:20px">
-      <h2 id="apropos-title" style="font-family:'Playfair Display',serif;margin:6px 0 16px 0">À propos de Maestro Food</h2>
-      <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap">
-        <div style="flex:1;min-width:280px">
-          <p style="color:var(--muted)">Maestro Food est né de la passion pour les plats bien faits et les moments partagés. Nous sélectionnons des ingrédients frais, travaillés par notre chef pour créer des saveurs authentiques et modernes.</p>
-          <ul style="color:var(--muted);margin-top:12px">
-            <li>Produits locaux et de qualité</li>
-            <li>Équipe professionnelle & service attentif</li>
-            <li>Menus modulables pour événements</li>
-          </ul>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notre Histoire</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Une Passion pour l'Excellence Culinaire</h3>
+                    <p>Fondé en 2010, Maestro Food est bien plus qu'un simple restaurant. C'est un lieu où l'art culinaire rencontre l'innovation, où chaque ingrédient est soigneusement sélectionné pour offrir une expérience gustative inoubliable.</p>
+                    <p>Notre chef étoilé, formé aux meilleures écoles de cuisine française, revisite les classiques avec une touche moderne et créative qui fait notre renommée.</p>
+                    <p>Nous croyons que chaque repas devrait être une célébration, et nous nous engageons à créer des moments mémorables pour chacun de nos clients.</p>
+                    <a href="#contact" class="btn">En Savoir Plus</a>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Notre restaurant">
+                </div>
+            </div>
         </div>
-        <div style="flex:1;min-width:260px">
-          <div style="background:var(--glass);padding:14px;border-radius:12px">
-            <strong>Adresse</strong>
-            <p style="margin:6px 0;color:var(--muted)">Maestro Food — Centre ville, Douala (à préciser)</p>
-            <strong>Téléphone</strong>
-            <p style="margin:6px 0;color:var(--muted)">+237 698 71 57 69</p>
-            <strong>Heures</strong>
-            <p style="margin:6px 0;color:var(--muted)">Mar — Dim 10:00 — 22:00</p>
-          </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Service Traiteur</h3>
+                    <p>Service de traiteur complet pour vos événements privés et professionnels. Menus personnalisés selon vos goûts et votre budget.</p>
+                    <div class="price">À partir de 50 000 FCFA</div>
+                    <div class="capacity-options">
+                        <h4>Options de capacité:</h4>
+                        <div class="options-grid">
+                            <div class="option">50 places</div>
+                            <div class="option">100 places</div>
+                            <div class="option">200 places</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/237698715769?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20votre%20service%20traiteur." class="btn" target="_blank">Commander</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>Anniversaire Surprise</h3>
+                    <p>Organisation complète d'anniversaires surprises avec décoration, gâteau personnalisé et animation.</p>
+                    <div class="price">À partir de 15 000 FCFA</div>
+                    <div class="capacity-options">
+                        <h4>Forfaits:</h4>
+                        <div class="options-grid">
+                            <div class="option">Basique</div>
+                            <div class="option">Standard</div>
+                            <div class="option">Premium</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/237698715769?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20l'organisation%20d'un%20anniversaire%20surprise." class="btn" target="_blank">Réserver</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Anniversaire au Restaurant</h3>
+                    <p>Célébrez votre anniversaire dans notre restaurant avec des forfaits tout compris pour une expérience mémorable.</p>
+                    <div class="capacity-options">
+                        <h4>Forfaits places:</h4>
+                        <div class="options-grid">
+                            <div class="option">5 places</div>
+                            <div class="option">10 places</div>
+                            <div class="option">15 places</div>
+                            <div class="option">25 places</div>
+                            <div class="option">50 places</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20réserver%20pour%20un%20anniversaire%20au%20restaurant." class="btn" target="_blank">Réserver</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notre Carte</h2>
+            </div>
+            <div class="menu-grid">
+                <!-- Plat 1 -->
+                <div class="menu-card">
+                    <div class="menu-img">
+                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Poulet Braisé Maison">
+                    </div>
+                    <div class="menu-details">
+                        <h3>Poulet Braisé Maison</h3>
+                        <p>Poulet mariné aux épices traditionnelles, servi avec alloco et sauce spéciale.</p>
+                        <div class="me

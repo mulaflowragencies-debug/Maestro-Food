@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maestro Food - Restaurant Gastronomique & Services Traiteur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Variables et Réinitialisation de Base */
+        :root {
+            /* Couleurs Maestro Food (Professionnelles et Chaleureuses) */
+            --color-primary: #8B0000; /* Rouge Bordeau/Maestro - Fort et Élégant */
+            --color-secondary: #FFD700; /* Or - Luxe et Gastronomie */
+            --color-dark: #333333; /* Texte/Fond foncé */
+            --color-light: #F5F5F5; /* Fond clair */
+            --color-accent: #4CAF50; /* Vert pour le bouton WhatsApp/Action */
+            
+            /* Polices */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--color-dark);
+            background-color: var(--color-light);
+            scroll-behavior: smooth;
+        }
+
+        /* Conteneur Général */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* En-tête (Header) */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+            /* Placeholder pour le logo */
+            background-color: var(--color-primary);
+            border-radius: 50%; 
+        }
+
+        .logo h1 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+        }
+
+        /* Menu de Navigation */
+        .nav-menu a {
+            color: var(--color-dark);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s, border-bottom 0.3s;
+            padding-bottom: 5px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--color-primary);
+            border-bottom: 2px solid var(--color-primary);
+        }
+        
+        /* Boutons d'Action (CTA) */
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: transform 0.3s ease, background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .primary-cta {
+            background-color: var(--color-accent);
+            color: white;
+            border: 2px solid var(--color-accent);
+        }
+
+        .primary-cta:hover {
+            background-color: #388E3C; /* Vert foncé au survol */
+            transform: scale(1.05); /* Animation d'agrandissement */
+        }
+        
+        .secondary-cta {
+            background-color: var(--color-primary);
+            color: white;
+            border: 2px solid var(--color-primary);
+        }
+
+        .secondary-cta:hover {
+            background-color: #6a0000;
+            transform: translateY(-2px); /* Animation de soulèvement */
+        }
+
+        /* Section Héro (Accueil) */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-background.jpg'); 
+            /* Remplacer 'hero-background.jpg' par votre image de fond de restaurant/plat */
+            background-size: cover;
+            background-position: center;
+            height: 80vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px; /* Espace pour le header fixed */
+        }
+
+        .hero-content h2 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out; /* Animation */
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+        
+        .whatsapp-info {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Sections Générales */
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        section h3 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        section h3::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-secondary);
+            margin: 10px auto 0;
+        }
+
+        /* Section Présentation */
+        .info-section .container {
+            max-width: 900px;
+            text-align: left;
+        }
+        
+        .info-section p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .presentation-image img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Menu */
+        .menu-preview {
+            background-color: white;
+        }
+
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+        }
+
+        .dish-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .dish-card:hover {
+            transform: translateY(-10px); /* Animation subtile au survol */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .dish-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .dish-card h4 {
+            font-family: var(--font-heading);
+            color: var(--color-dark);
+            margin: 15px 0 5px;
+            font-size: 1.5rem;
+        }
+
+        .dish-card p {
+            padding: 0 15px 20px;
+            font-size: 0.95rem;
+        }
+        
+        /* Section Services */
+        .services-section {
+            background-color: var(--color-light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            border-bottom: 4px solid var(--color-secondary);
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        
+        .service-card:hover {
+            background-color: #FFFACD; /* Jaune très pâle */
+        }
+        
+        .service-card i {
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+        }
+        
+        .service-card h4 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .service-card p {
+            margin-bottom: 15px;
+        }
+        
+        .service-card .price {
+            display: block;
+            font-weight: 700;
+            color: var(--color-accent);
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding: 10px 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .service-card ul li {
+            margin-bottom: 5px;
+        }
+
+
+        /* Pied de Page */
+        .main-footer {
+            background-color: var(--color-dark);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .contact-info i {
+            color: var(--color-secondary);
+            margin-right: 8px;
+        }
+        
+        /* Bouton Hamburger */
+        .hamburger {
+            display: none; /* Caché par défaut sur grand écran */
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--color-primary);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Animations Clés */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Media Queries (Rendre le site réactif) */
+        @media (max-width: 900px) {
+            .nav-menu {
+                display: none; /* Cache le menu par défaut */
+                flex-direction: column;
+                position: absolute;
+                top: 70px; 
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                transform: translateX(100%); /* Commence hors écran */
+                transition: transform 0.4s ease-out;
+            }
+
+            .nav-menu.active {
+                display: flex; /* Affiche le menu quand la classe active est ajoutée par JS */
+                transform: translateX(0); /* Fait glisser le menu sur l'écran */
+            }
+
+            .nav-menu a {
+                margin: 10px 0;
+                padding: 10px 40px;
+                text-align: left;
+                border-bottom: 1px solid var(--color-light);
+            }
+            
+            .nav-menu .nav-cta {
+                margin: 10px 40px;
+                text-align: center;
+            }
+
+            .hamburger {
+                display: block; /* Affiche le hamburger */
+            }
+            
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-content p {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+    </head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo Maestro Food">
+            <h1>Maestro Food</h1>
+        </div>
+        
+        <nav class="nav-menu" id="navMenu">
+            <a href="#accueil">Accueil</a>
+            <a href="#presentation">Notre Histoire</a>
+            <a href="#menu">Notre Carte</a>
+            <a href="#services">Nos Services</a>
+            <a href="#contact">Contact</a>
+            <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaiterais%20commander%20les%20plats%20suivants:%20[Liste%20des%20plats]%20chez%20Maestro%20Food." 
+               target="_blank" 
+               class="cta-button secondary-cta nav-cta">Commander (WhatsApp)</a>
+        </nav>
+        
+        <button class="hamburger" id="hamburgerButton" aria-label="Ouvrir le menu de navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero-section">
+            <div class="hero-content">
+                <h2>L'excellence culinaire à votre table.</h2>
+                <p>Découvrez des saveurs inoubliables et un service traiteur professionnel. Maestro Food, l'art de bien manger.</p>
+                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaiterais%20commander%20les%20plats%20suivants:%20[Liste%20des%20plats]%20chez%20Maestro%20Food." 
+                   target="_blank" 
+                   class="cta-button primary-cta">
+                    <i class="fab fa-whatsapp"></i> Commander Maintenant
+                </a>
+                <p class="whatsapp-info">Livraison rapide : Contactez-nous sur WhatsApp (+237 698 71 57 69)</p>
+            </div>
+        </section>
+
+        <section id="presentation" class="info-section">
+            <div class="container">
+                <h3>Notre Restaurant : Maestro Food</h3>
+                <p>Né d'une passion pour la gastronomie, Maestro Food vous propose une cuisine raffinée, élaborée avec des ingrédients frais et locaux. Que ce soit pour un repas quotidien ou un événement spécial, nous mettons notre expertise au service de vos papilles.</p>
+                <p>Notre mission : Transformer chaque plat en une œuvre d'art, chaque repas en une célébration.</p>
+                <div class="presentation-image">
+                     <img src="chef.jpg" alt="Chef de Maestro Food en cuisine"> 
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-preview">
+            <h3>Nos Plats Phares</h3>
+            <div class="dishes-grid">
+                <div class="dish-card">
+                    <img src="plat1.jpg" alt="Plat de poisson gastronomique">
+                    <h4>Le Filet Maestro</h4>
+                    <p>Poisson frais et sa sauce secrète, accompagné de légumes de saison.</p>
+                </div>
+                <div class="dish-card">
+                    <img src="plat2.jpg" alt="Plat de viande">
+                    <h4>Rôti Royal</h4>
+                    <p>Viande tendre, marinée 24h, servie avec des frites maison.</p>
+                </div>
+                <div class="dish-card">
+                    <img src="plat3.jpg" alt="Dessert au chocolat">
+                    <h4>Symphonie Chocolatée</h4>
+                    <p>Notre dessert signature : un mélange parfait de saveurs cacao.</p>
+                </div>
+            </div>
+            <a href="#contact" class="cta-button secondary-cta">Commander un de ces plats</a>
+        </section>
+
+        <section id="services" class="services-section">
+            <h3>Nos Services Spéciaux</h3>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <i class="fas fa-utensils"></i>
+                    <h4>Service Traiteur Événementiel</h4>
+                    <p>Pour vos mariages, conférences ou réceptions. Un menu sur-mesure et une équipe dédiée.</p>
+                    <span class="price">À partir de 50 000 Francs CFA</span>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-gift"></i>
+                    <h4>Anniversaire Surprise</h4>
+                    <p>Organisation complète pour une surprise inoubliable à domicile ou au bureau.</p>
+                    <span class="price">À partir de 15 000 Francs CFA</span>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-birthday-cake"></i>
+                    <h4>Anniversaire au Restaurant</h4>
+                    <p>Célébrez votre événement dans notre cadre élégant.</p>
+                    <div class="options">
+                        <p>Options de places (Prix variants) :</p>
+                        <ul>
+                            <li>5 places</li>
+                            <li>10 places</li>
+                            <li>15 places</li>
+                            <li>25 places</li>
+                            <li>50 places</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Maestro Food. Tous droits réservés.</p>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> Commande : +237 698 71 57 69</p>
+                <p><i class="fas fa-envelope"></i> Email : contact@maestrofood.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Adresse : 123, Rue de la Gastronomie, Ville</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerButton = document.getElementById('hamburgerButton');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = navMenu.querySelectorAll('a');
+
+        // Fonction pour basculer l'état du menu (ouvrir/fermer)
+        hamburgerButton.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            // Change l'icône du hamburger (bars <-> times)
+            const icon = hamburgerButton.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Ferme le menu quand un lien est cliqué (utile sur mobile)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    hamburgerButton.querySelector('i').classList.remove('fa-times');
+                    hamburgerButton.querySelector('i').classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
+    </body>
+</html>

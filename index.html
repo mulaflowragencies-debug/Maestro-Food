@@ -53,6 +53,11 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
+        .btn-small {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+
         /* Barre de navigation */
         header {
             background: #1a1a1a;
@@ -309,6 +314,19 @@
         .menu {
             padding: 100px 0;
             background: #fff;
+        }
+
+        .menu-category {
+            margin-bottom: 60px;
+        }
+
+        .menu-category h3 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e6b325;
+            display: inline-block;
         }
 
         .menu-grid {
@@ -680,13 +698,435 @@
             <div class="section-title">
                 <h2>Notre Carte</h2>
             </div>
-            <div class="menu-grid">
-                <!-- Plat 1 -->
-                <div class="menu-card">
-                    <div class="menu-img">
-                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Poulet Braisé Maison">
+            
+ <!-- Menu du Terroir -->
+            <div class="menu-category">
+                <h3>Menu du Terroir</h3>
+                <div class="menu-grid">
+                    <!-- Plat 1 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1582878826629-29b7ad0c5bf7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Ndole mignondo">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Ndole Mignondo</h3>
+                            <p>Plat traditionnel camerounais à base de feuilles de ndolé, arachides et poisson ou viande.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">2 000 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20le%20Ndole%20Mignondo." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="menu-details">
-                        <h3>Poulet Braisé Maison</h3>
-                        <p>Poulet mariné aux épices traditionnelles, servi avec alloco et sauce spéciale.</p>
-                        <div class="me
+                    <!-- Plat 2 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1964&q=80" alt="Spaghettis bolo">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Spaghettis Bolo</h3>
+                            <p>Spaghettis avec sauce bolognaise maison, viande hachée et fromage râpé.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">1 500 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20les%20Spaghettis%20Bolo." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plat 3 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Riz sénégalais">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Riz Sénégalais</h3>
+                            <p>Riz parfumé aux légumes et épices, accompagné de poulet ou poisson.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">1 500 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20le%20Riz%20Sénégalais." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plat 4 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Poisson d'eau douce">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Poisson d'Eau Douce</h3>
+                            <p>Capitaine ou Tilapia frais, préparé à la sauce tomate ou braisé.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">2 500 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20le%20Poisson%20d'Eau%20Douce." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plat 5 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1598514982193-61d6a9d85333?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Poisson à la poêle">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Poisson à la Poêle</h3>
+                            <p>Filet de poisson frais poêlé avec légumes de saison et sauce crémeuse.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">2 000 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20le%20Poisson%20à%20la%20Poêle." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plat 6 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Eru water fufu">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Eru Water Fufu</h3>
+                            <p>Plat traditionnel à base de feuilles d'eru, accompagné de water fufu.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">2 000 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20l'Eru%20Water%20Fufu." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plat 7 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1934&q=80" alt="Bifeck">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Bifeck</h3>
+                            <p>Steak de bœuf grillé, servi avec frites maison et sauce au choix.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">2 500 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20le%20Bifeck." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <!-- Fast Food -->
+            <div class="menu-category">
+                <h3>Fast Food</h3>
+                <div class="menu-grid">
+                    <!-- Plat 1 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Poulet pané">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Poulet Pané</h3>
+                            <p>Filet de poulet pané croustillant, servi avec frites et sauce.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">3 000 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20le%20Poulet%20Pané." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plat 2 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1606755962773-d324e74534a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Poulet mayo">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Poulet Mayo</h3>
+                            <p>Poulet frais préparé à la mayonnaise maison et épices.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">3 000 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20le%20Poulet%20Mayo." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plat 3 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Poulet rôti">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Poulet Rôti</h3>
+                            <p>Poulet entier rôti au four avec herbes de Provence.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">3 000 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20le%20Poulet%20Rôti." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plat 4 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80" alt="Shawarma">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Shawarma</h3>
+                            <p>Sandwich libanais avec viande marinée, légumes et sauce.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">1 000 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20le%20Shawarma." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plat 5 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Pizza">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Pizza</h3>
+                            <p>Pizza maison avec garniture au choix, fromage fondant.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">5 000 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20une%20Pizza." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plat 6 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1550304943-4f24f54ddde9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Saucisse">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Saucisse</h3>
+                            <p>Saucisse grillée servie avec frites et salade.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">2 500 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20la%20Saucisse." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Boissons -->
+            <div class="menu-category">
+                <h3>Boissons</h3>
+                <div class="menu-grid">
+                    <!-- Boisson 1 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Jus de fruit">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Jus de Fruit</h3>
+                            <p>Jus de fruits frais pressés (orange, ananas, mangue, etc.).</p>
+                            <div class="menu-price">
+                                <span class="price-tag">500 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20un%20Jus%20de%20Fruit." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Boisson 2 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80" alt="Cocktails">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Cocktails</h3>
+                            <p>Cocktails maison préparés avec fruits frais et ingrédients de qualité.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">1 000 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20un%20Cocktail." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Boisson 3 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-1.2.1&auto=format&fit=crop&w=1948&q=80" alt="Glaces">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Glaces</h3>
+                            <p>Glaces artisanales dans différents parfums (vanille, chocolat, fraise).</p>
+                            <div class="menu-price">
+                                <span class="price-tag">1 000 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20une%20Glace." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Boisson 4 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1558644353-2d0b3ba31ac3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Bière en canette">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Bière en Canette</h3>
+                            <p>Bière locale et internationale servie fraîche.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">1 000 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20une%20Bière%20en%20Canette." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Boisson 5 -->
+                    <div class="menu-card">
+                        <div class="menu-img">
+                            <img src="https://images.unsplash.com/photo-1535958636470-b021c80d1c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Shoot alcoolisé">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Shoot Alcoolisé</h3>
+                            <p>Shots d'alcool variés pour égayer votre soirée.</p>
+                            <div class="menu-price">
+                                <span class="price-tag">1 500 FCFA</span>
+                                <a href="https://wa.me/237698715769?text=Bonjour,%20je%20souhaite%20commander%20un%20Shoot%20Alcoolisé." class="btn btn-small" target="_blank">Commander</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactez-Nous</h2>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Nos Coordonnées</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Adresse</h4>
+                                <p>Ebolowa SI 2, juste après la station Tradev<br>Yaoundé, Cameroun</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <p>+237 698 71 57 69<br>+237 698 52 36 25<br>+237 680 47 44 54</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contact@maestrofood.cm</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Heures d'ouverture</h4>
+                                <p>Lundi - Dimanche: 10h - 23h</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/237698715769" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envoyez-nous un Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Votre téléphone">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Votre message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer le Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Maestro Food</h3>
+                    <p>Votre restaurant de référence pour une expérience culinaire exceptionnelle alliant tradition et innovation.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/237698715769" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#about">À Propos</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Nos Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Service Traiteur</a></li>
+                        <li><a href="#services">Anniversaire Surprise</a></li>
+                        <li><a href="#services">Anniversaire Restaurant</a></li>
+                        <li><a href="#menu">Commande en Ligne</a></li>
+                        <li><a href="#contact">Réservation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Ebolowa SI 2, Yaoundé</li>
+                        <li><i class="fas fa-phone"></i> +237 698 71 57 69</li>
+                        <li><i class="fas fa-phone"></i> +237 698 52 36 25</li>
+                        <li><i class="fas fa-phone"></i> +237 680 47 44 54</li>
+                        <li><i class="fas fa-envelope"></i> contact@maestrofood.cm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Maestro Food. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Menu Hamburger
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Animation au défilement
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        // Soumission du formulaire de contact
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message! Nous vous contacterons très soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
